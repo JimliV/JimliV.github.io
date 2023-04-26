@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>CodePen - Capstone v0.8</title>
-  
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
 
-    <title>Query Vessel Traffic Statistics, Pacific 2015-2022</title>
+    <title>Query Vessel Traffic Statistics</title>
 
     <!-- Load the Chart.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
@@ -107,18 +97,18 @@
     
     <!-- div class creates and displays a user selection box -->
     <div class="esri-widget" id="optionsDiv">
-      <h2>Latitude, Longitude, Radius</h2>
+      <h2>Query Region</h2>
 
       <!-- allows user selected lat and long-->
-      <select class="esri-widget" id="latInput">
-        <input type="number" name="lat" id="lat" placeholder="Enter Lat" step="0.01" max="180" min = "-180">
+      <select class="esri-widget" id="latInput" hidden>
+        <input type="number" name="lat" id="lat" placeholder="Enter Latitude" step="0.1" max="180" min = "-180">
       </select>
       
-      <select class="esri-widget" id="lonInput">
-        <input type="number" name="lon" id="lon" placeholder="Enter Lon" step="0.01" max="180" min = "-180">
+      <select class="esri-widget" id="lonInput" hidden>
+        <input type="number" name="lon" id="lon" placeholder="Enter Longitude" step="0.1" max="180" min = "-180">
       </select>
       
-      <select class="esri-widget" id="radInput">
+      <select class="esri-widget" id="radInput" hidden>
         <input type="number" name="rad" id="rad" placeholder="Enter Radius" step="1" max="2000" min = "1">
       </select>
 
@@ -126,9 +116,4 @@
     </div>
     </div>
   </body>
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
-
-</body>
 </html>
