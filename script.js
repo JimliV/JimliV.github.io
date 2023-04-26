@@ -61,7 +61,7 @@ require([
           "<div id='title' class='esri-widget'>",
           "<span id='num-vessels'>0</span> vessels on average pass through the selected area per year.",
           "<span id='num-vessels-date'>0</span> vessels on average pass through between the selected days.",
-          "Based on this, <span id='person-risk'>0</span> people on average would be on the water during that time.",
+          "Based on this, <span id='person-risk'>0</span> people on average would be in the area during that time.",
           "</div>"
         ].join(" ");
         
@@ -127,6 +127,7 @@ require([
           // Does not effect tool functionality, only readability
           
           labelFormatFunction: (value, type, element, layout) => {
+              const string = new String("Date Range: ")
               const normal = new Intl.DateTimeFormat('en-us');
               switch (type) {
                 case "min":
@@ -144,10 +145,10 @@ require([
                   const dayEnd = (value[1].toLocaleString("default", {day:"2-digit"}))
                   
                   if(dayStart+monthStart != dayEnd+monthEnd){
-                    element.innerText = dayStart+' '+monthStart+'  -  '+dayEnd+' '+monthEnd;
+                    element.innerText = string + dayStart+' '+monthStart+'  -  '+dayEnd+' '+monthEnd;
                   }
                   else {
-                    element.innerText = dayStart+' '+monthStart;
+                    element.innerText = string + dayStart+' '+monthStart;
                   }
                   
                   break;
